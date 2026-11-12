@@ -27,6 +27,7 @@ share/python-wheels/
 MANIFEST
 
 # Virtual environments
+.env
 .env.local
 .venv
 env/
@@ -48,3 +49,4 @@ desktop.ini
 
 # Logs
 *.log
+

@@ -16,12 +16,15 @@ from nltk.corpus import wordnet
 
 def ensure_nltk_resources():
     """Ensure required NLTK datasets are downloaded silently."""
-    required = ["punkt", "wordnet", "omw-1.4"]
+    required = ["punkt", "punkt_tab", "wordnet", "omw-1.4"]
     for resource in required:
         try:
-            nltk.data.find(f"tokenizers/{resource}" if resource == "punkt" else f"corpora/{resource}")
+            nltk.data.find(f"tokenizers/{resource}" if "punkt" in resource else f"corpora/{resource}")
         except Exception:
-            pass
+            try:
+                nltk.download(resource, quiet=True)
+            except Exception:
+                pass
 
 
 ensure_nltk_resources()
