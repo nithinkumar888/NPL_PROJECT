@@ -1,5 +1,11 @@
 # 🌱 Rythu Mitra: NLP-Based Organic Farming Advisory System for Telangana Farmers
 
+[![Live App on Render](https://img.shields.io/badge/Render-Live%20App-46E3B7?style=for-the-badge&logo=render&logoColor=white)](https://npl-project-6juy.onrender.com)
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](https://npl-project-6juy.onrender.com)
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+
+**Live Public Deployment:** [https://npl-project-6juy.onrender.com](https://npl-project-6juy.onrender.com)
+
 An intelligent, multilingual Natural Language Processing (NLP) advisory system designed to assist farmers, agricultural extension officers (Rythu Vedika AEOs), and students in Telangana. The system diagnoses crop problems, pests, diseases, nutrient deficiencies, and soil health issues from natural descriptions (in English and Telugu), retrieves top-3 organic solutions using vector search, and provides step-by-step preparation recipes for organic bio-inputs.
 
 ---
