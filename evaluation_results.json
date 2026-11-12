@@ -1,0 +1,2551 @@
+{
+  "timestamp": "2026-11-12 17:27:21",
+  "total_samples": 142,
+  "evaluation_time_seconds": 6.62,
+  "queries_per_second": 21.44,
+  "metrics": {
+    "top1_accuracy": 97.89,
+    "top2_accuracy": 100.0,
+    "top3_accuracy": 100.0,
+    "mean_reciprocal_rank": 0.9894
+  },
+  "category_breakdown": {
+    "Pest": {
+      "total": 56,
+      "top1_accuracy": 98.21,
+      "top3_accuracy": 100.0
+    },
+    "Disease": {
+      "total": 60,
+      "top1_accuracy": 96.67,
+      "top3_accuracy": 100.0
+    },
+    "Nutrient Deficiency": {
+      "total": 9,
+      "top1_accuracy": 100.0,
+      "top3_accuracy": 100.0
+    },
+    "Soil Health": {
+      "total": 11,
+      "top1_accuracy": 100.0,
+      "top3_accuracy": 100.0
+    },
+    "Weed": {
+      "total": 2,
+      "top1_accuracy": 100.0,
+      "top3_accuracy": 100.0
+    },
+    "Crop Management": {
+      "total": 4,
+      "top1_accuracy": 100.0,
+      "top3_accuracy": 100.0
+    }
+  },
+  "detailed_results": [
+    {
+      "index": 0,
+      "id": "TG001",
+      "crop": "Paddy",
+      "problem": "Brown planthopper (BPH)",
+      "category": "Pest",
+      "query": "my paddy is drying in circles and small brown insects at the bottom of plants",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Brown planthopper (BPH)",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.8295,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Beauveria bassiana"
+      ]
+    },
+    {
+      "index": 1,
+      "id": "TG002",
+      "crop": "Paddy",
+      "problem": "Yellow stem borer",
+      "category": "Pest",
+      "query": "central shoot of paddy dries and can be pulled out easily; panicles are white",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Yellow stem borer",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.6157,
+      "matched_recipes": [
+        "Pheromone traps",
+        "Trichogramma egg parasitoid cards"
+      ]
+    },
+    {
+      "index": 2,
+      "id": "TG003",
+      "crop": "Paddy",
+      "problem": "Leaf folder",
+      "category": "Pest",
+      "query": "paddy leaves are folded and have white streaks",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Leaf folder",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.8705,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Trichogramma egg parasitoid cards"
+      ]
+    },
+    {
+      "index": 3,
+      "id": "TG004",
+      "crop": "Paddy",
+      "problem": "Blast",
+      "category": "Disease",
+      "query": "paddy leaves have eye shaped spots and neck of panicle broken",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Blast",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.8029,
+      "matched_recipes": [
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 4,
+      "id": "TG005",
+      "crop": "Paddy",
+      "problem": "Sheath blight",
+      "category": "Disease",
+      "query": "brown patches on paddy stem near water level spreading upwards",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Sheath blight",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.8166,
+      "matched_recipes": [
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 5,
+      "id": "TG006",
+      "crop": "Paddy",
+      "problem": "Bacterial leaf blight",
+      "category": "Disease",
+      "query": "paddy leaf tips turning yellow white and drying from edges",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Bacterial leaf blight",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.8157,
+      "matched_recipes": [
+        "Cow dung extract 20%"
+      ]
+    },
+    {
+      "index": 6,
+      "id": "TG007",
+      "crop": "Paddy",
+      "problem": "Zinc deficiency (khaira)",
+      "category": "Nutrient Deficiency",
+      "query": "young paddy plants stunted with brown rusty spots",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Zinc deficiency (khaira)",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.6545,
+      "matched_recipes": [
+        "Vermicompost",
+        "Green manure (dhaincha / sunhemp)"
+      ]
+    },
+    {
+      "index": 7,
+      "id": "TG008",
+      "crop": "Paddy",
+      "problem": "Declining soil fertility under continuous paddy",
+      "category": "Soil Health",
+      "query": "my paddy soil is losing fertility and yield is falling every year",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Declining soil fertility under continuous paddy",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.8389,
+      "matched_recipes": [
+        "Green manure (dhaincha / sunhemp)",
+        "Azolla"
+      ]
+    },
+    {
+      "index": 8,
+      "id": "TG009",
+      "crop": "Paddy",
+      "problem": "Weeds in transplanted paddy",
+      "category": "Weed",
+      "query": "how to control weeds in paddy without herbicide",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Weeds in transplanted paddy",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.8394,
+      "matched_recipes": [
+        "Jeevamrutham"
+      ]
+    },
+    {
+      "index": 9,
+      "id": "TG010",
+      "crop": "Cotton",
+      "problem": "Pink bollworm",
+      "category": "Pest",
+      "query": "pink worms inside my cotton bolls and flowers are twisted",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Pink bollworm",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.8543,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 10,
+      "id": "TG011",
+      "crop": "Cotton",
+      "problem": "Whitefly",
+      "category": "Pest",
+      "query": "tiny white flies fly up when I shake cotton plants and leaves are sticky",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Whitefly",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.8557,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Yellow and blue sticky traps"
+      ]
+    },
+    {
+      "index": 11,
+      "id": "TG012",
+      "crop": "Cotton",
+      "problem": "Aphids and jassids (leaf hoppers)",
+      "category": "Pest",
+      "query": "cotton leaves are curling downwards and edges turning red and dry",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Aphids and jassids (leaf hoppers)",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.831,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 12,
+      "id": "TG013",
+      "crop": "Cotton",
+      "problem": "American bollworm",
+      "category": "Pest",
+      "query": "caterpillar eating cotton bolls and squares making round holes",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "American bollworm",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.9159,
+      "matched_recipes": [
+        "HaNPV / SlNPV",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 13,
+      "id": "TG014",
+      "crop": "Cotton",
+      "problem": "Wilt and root rot",
+      "category": "Disease",
+      "query": "cotton plants suddenly wilt and dry in patches",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Wilt and root rot",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.8222,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 14,
+      "id": "TG015",
+      "crop": "Cotton",
+      "problem": "Leaf reddening",
+      "category": "Nutrient Deficiency",
+      "query": "cotton leaves turning red during boll formation",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Leaf reddening",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.9085,
+      "matched_recipes": [
+        "Jeevamrutham",
+        "Panchagavya"
+      ]
+    },
+    {
+      "index": 15,
+      "id": "TG016",
+      "crop": "Cotton",
+      "problem": "Low organic carbon in black cotton soil",
+      "category": "Soil Health",
+      "query": "how to improve my black soil for cotton naturally",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Low organic carbon in black cotton soil",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.8547,
+      "matched_recipes": [
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 16,
+      "id": "TG017",
+      "crop": "Maize",
+      "problem": "Fall armyworm",
+      "category": "Pest",
+      "query": "maize whorl full of sawdust like droppings and leaves with holes",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fall armyworm",
+      "top1_predicted_crop": "Maize",
+      "top1_score": 0.8102,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 17,
+      "id": "TG018",
+      "crop": "Maize",
+      "problem": "Stem borer",
+      "category": "Pest",
+      "query": "maize stem has holes and central shoot dries",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Stem borer",
+      "top1_predicted_crop": "Maize",
+      "top1_score": 0.8217,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Trichogramma egg parasitoid cards"
+      ]
+    },
+    {
+      "index": 18,
+      "id": "TG019",
+      "crop": "Maize",
+      "problem": "Turcicum leaf blight",
+      "category": "Disease",
+      "query": "maize leaves have long grey cigar shaped patches",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Turcicum leaf blight",
+      "top1_predicted_crop": "Maize",
+      "top1_score": 0.9026,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 19,
+      "id": "TG020",
+      "crop": "Maize",
+      "problem": "Nitrogen deficiency",
+      "category": "Nutrient Deficiency",
+      "query": "lower leaves of maize turning yellow in V shape",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Nitrogen deficiency",
+      "top1_predicted_crop": "Maize",
+      "top1_score": 0.8591,
+      "matched_recipes": [
+        "Jeevamrutham",
+        "Vermicompost"
+      ]
+    },
+    {
+      "index": 20,
+      "id": "TG021",
+      "crop": "Maize",
+      "problem": "Soil exhaustion from maize after maize",
+      "category": "Soil Health",
+      "query": "maize yield decreasing each year in the same field",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Soil exhaustion from maize after maize",
+      "top1_predicted_crop": "Maize",
+      "top1_score": 0.8671,
+      "matched_recipes": [
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 21,
+      "id": "TG022",
+      "crop": "Red Gram",
+      "problem": "Pod borer",
+      "category": "Pest",
+      "query": "red gram pods have holes and green caterpillars inside",
+      "rank": 2,
+      "top1_match": false,
+      "top3_match": true,
+      "top1_predicted_problem": "Pod borer and Maruca",
+      "top1_predicted_crop": "Green Gram",
+      "top1_score": 0.8355,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "HaNPV / SlNPV"
+      ]
+    },
+    {
+      "index": 22,
+      "id": "TG023",
+      "crop": "Red Gram",
+      "problem": "Pod fly",
+      "category": "Pest",
+      "query": "red gram seeds are damaged by small maggots inside pods",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Pod fly",
+      "top1_predicted_crop": "Red Gram",
+      "top1_score": 0.8952,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 23,
+      "id": "TG024",
+      "crop": "Red Gram",
+      "problem": "Fusarium wilt",
+      "category": "Disease",
+      "query": "red gram plants drying in patches with dark streaks on stem",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fusarium wilt",
+      "top1_predicted_crop": "Red Gram",
+      "top1_score": 0.8369,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 24,
+      "id": "TG025",
+      "crop": "Red Gram",
+      "problem": "Sterility mosaic",
+      "category": "Disease",
+      "query": "red gram plants bushy with no flowers and small leaves",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Sterility mosaic",
+      "top1_predicted_crop": "Red Gram",
+      "top1_score": 0.8375,
+      "matched_recipes": [
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 25,
+      "id": "TG026",
+      "crop": "Red Gram",
+      "problem": "Phytophthora blight (waterlogging)",
+      "category": "Disease",
+      "query": "red gram plants collapsing in waterlogged field",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Phytophthora blight (waterlogging)",
+      "top1_predicted_crop": "Red Gram",
+      "top1_score": 0.9157,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 26,
+      "id": "TG027",
+      "crop": "Soybean",
+      "problem": "Semilooper and Spodoptera (defoliators)",
+      "category": "Pest",
+      "query": "caterpillars eating soybean leaves leaving only veins",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Semilooper and Spodoptera (defoliators)",
+      "top1_predicted_crop": "Soybean",
+      "top1_score": 0.8487,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "HaNPV / SlNPV"
+      ]
+    },
+    {
+      "index": 27,
+      "id": "TG028",
+      "crop": "Soybean",
+      "problem": "Stem fly and girdle beetle",
+      "category": "Pest",
+      "query": "soybean plants wilting at top and stem girdled",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Stem fly and girdle beetle",
+      "top1_predicted_crop": "Soybean",
+      "top1_score": 0.8059,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 28,
+      "id": "TG029",
+      "crop": "Soybean",
+      "problem": "Yellow mosaic virus",
+      "category": "Disease",
+      "query": "soybean leaves have yellow patches and plants stunted",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Yellow mosaic virus",
+      "top1_predicted_crop": "Soybean",
+      "top1_score": 0.8684,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Yellow and blue sticky traps"
+      ]
+    },
+    {
+      "index": 29,
+      "id": "TG030",
+      "crop": "Soybean",
+      "problem": "Root rot and charcoal rot",
+      "category": "Disease",
+      "query": "soybean seedlings drying and root black",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Root rot and charcoal rot",
+      "top1_predicted_crop": "Soybean",
+      "top1_score": 0.8938,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "Rhizobium / Bradyrhizobium"
+      ]
+    },
+    {
+      "index": 30,
+      "id": "TG031",
+      "crop": "Soybean",
+      "problem": "Poor nodulation and low yield",
+      "category": "Soil Health",
+      "query": "soybean roots have no nodules and plants are pale",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Poor nodulation and low yield",
+      "top1_predicted_crop": "Soybean",
+      "top1_score": 0.9364,
+      "matched_recipes": [
+        "Rhizobium / Bradyrhizobium",
+        "Phosphate solubilizing bacteria (PSB)"
+      ]
+    },
+    {
+      "index": 31,
+      "id": "TG032",
+      "crop": "Chilli",
+      "problem": "Thrips",
+      "category": "Pest",
+      "query": "chilli leaves curling upwards and turning silvery",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Thrips",
+      "top1_predicted_crop": "Chilli",
+      "top1_score": 0.8156,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 32,
+      "id": "TG033",
+      "crop": "Chilli",
+      "problem": "Yellow mite (murda complex)",
+      "category": "Pest",
+      "query": "chilli leaves curling downward and become hard and small",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Yellow mite (murda complex)",
+      "top1_predicted_crop": "Chilli",
+      "top1_score": 0.871,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 33,
+      "id": "TG034",
+      "crop": "Chilli",
+      "problem": "Fruit borer",
+      "category": "Pest",
+      "query": "caterpillar entering chilli fruits and eating inside",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fruit borer",
+      "top1_predicted_crop": "Chilli",
+      "top1_score": 0.9189,
+      "matched_recipes": [
+        "HaNPV / SlNPV",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 34,
+      "id": "TG035",
+      "crop": "Chilli",
+      "problem": "Anthracnose / fruit rot and dieback",
+      "category": "Disease",
+      "query": "chilli fruits have sunken black spots and twigs dry from top",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Anthracnose / fruit rot and dieback",
+      "top1_predicted_crop": "Chilli",
+      "top1_score": 0.8627,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 35,
+      "id": "TG036",
+      "crop": "Chilli",
+      "problem": "Leaf curl virus complex",
+      "category": "Disease",
+      "query": "whole chilli plant is stunted with curled thick leaves",
+      "rank": 2,
+      "top1_match": false,
+      "top3_match": true,
+      "top1_predicted_problem": "Thrips",
+      "top1_predicted_crop": "Chilli",
+      "top1_score": 0.8137,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 36,
+      "id": "TG037",
+      "crop": "Chilli",
+      "problem": "Damping off in nursery",
+      "category": "Disease",
+      "query": "chilli seedlings fall over and rot at base in nursery",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Damping off in nursery",
+      "top1_predicted_crop": "Chilli",
+      "top1_score": 0.9184,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 37,
+      "id": "TG038",
+      "crop": "Turmeric",
+      "problem": "Rhizome rot",
+      "category": "Disease",
+      "query": "turmeric leaves yellow and rhizome rotten and soft",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Rhizome rot",
+      "top1_predicted_crop": "Turmeric",
+      "top1_score": 0.8989,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "Neem cake"
+      ]
+    },
+    {
+      "index": 38,
+      "id": "TG039",
+      "crop": "Turmeric",
+      "problem": "Leaf blotch and leaf spot",
+      "category": "Disease",
+      "query": "turmeric leaves have brown blotches and dry",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Leaf blotch and leaf spot",
+      "top1_predicted_crop": "Turmeric",
+      "top1_score": 0.8795,
+      "matched_recipes": [
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 39,
+      "id": "TG040",
+      "crop": "Turmeric",
+      "problem": "Shoot borer",
+      "category": "Pest",
+      "query": "turmeric stem has small holes with sawdust and central leaf dries",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Shoot borer",
+      "top1_predicted_crop": "Turmeric",
+      "top1_score": 0.8188,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 40,
+      "id": "TG041",
+      "crop": "Turmeric",
+      "problem": "Heavy nutrient removal and low organic matter",
+      "category": "Soil Health",
+      "query": "how to feed turmeric crop organically",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Heavy nutrient removal and low organic matter",
+      "top1_predicted_crop": "Turmeric",
+      "top1_score": 0.7502,
+      "matched_recipes": [
+        "Jeevamrutham",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 41,
+      "id": "TG042",
+      "crop": "Groundnut",
+      "problem": "Early and late leaf spot (tikka)",
+      "category": "Disease",
+      "query": "groundnut leaves have dark round spots with yellow ring and shed early",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Early and late leaf spot (tikka)",
+      "top1_predicted_crop": "Groundnut",
+      "top1_score": 0.8981,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 42,
+      "id": "TG043",
+      "crop": "Groundnut",
+      "problem": "Collar rot and stem rot",
+      "category": "Disease",
+      "query": "groundnut seedlings drying with black powder at base",
+      "rank": 2,
+      "top1_match": false,
+      "top3_match": true,
+      "top1_predicted_problem": "Rust",
+      "top1_predicted_crop": "Groundnut",
+      "top1_score": 0.7156,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 43,
+      "id": "TG044",
+      "crop": "Groundnut",
+      "problem": "Spodoptera (tobacco caterpillar)",
+      "category": "Pest",
+      "query": "caterpillars eating groundnut leaves in large numbers",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Spodoptera (tobacco caterpillar)",
+      "top1_predicted_crop": "Groundnut",
+      "top1_score": 0.9275,
+      "matched_recipes": [
+        "HaNPV / SlNPV",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 44,
+      "id": "TG045",
+      "crop": "Groundnut",
+      "problem": "White grub",
+      "category": "Pest",
+      "query": "groundnut plants drying suddenly and grubs found in soil near roots",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "White grub",
+      "top1_predicted_crop": "Groundnut",
+      "top1_score": 0.8889,
+      "matched_recipes": [
+        "NADEP / pit compost",
+        "Metarhizium anisopliae"
+      ]
+    },
+    {
+      "index": 45,
+      "id": "TG046",
+      "crop": "Groundnut",
+      "problem": "Calcium deficiency (empty pods, pops)",
+      "category": "Nutrient Deficiency",
+      "query": "groundnut pods are empty without kernels",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Calcium deficiency (empty pods, pops)",
+      "top1_predicted_crop": "Groundnut",
+      "top1_score": 0.7741,
+      "matched_recipes": [
+        "NADEP / pit compost",
+        "Gypsum"
+      ]
+    },
+    {
+      "index": 46,
+      "id": "TG047",
+      "crop": "Tomato",
+      "problem": "Fruit borer",
+      "category": "Pest",
+      "query": "tomato fruits have holes and worms inside",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fruit borer",
+      "top1_predicted_crop": "Tomato",
+      "top1_score": 0.8771,
+      "matched_recipes": [
+        "HaNPV / SlNPV",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 47,
+      "id": "TG048",
+      "crop": "Tomato",
+      "problem": "Early blight",
+      "category": "Disease",
+      "query": "tomato lower leaves have brown rings and drying",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Early blight",
+      "top1_predicted_crop": "Tomato",
+      "top1_score": 0.8669,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 48,
+      "id": "TG049",
+      "crop": "Tomato",
+      "problem": "Tomato leaf curl virus",
+      "category": "Disease",
+      "query": "tomato leaves curling and plant stunted with no fruits",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Tomato leaf curl virus",
+      "top1_predicted_crop": "Tomato",
+      "top1_score": 0.8531,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Yellow and blue sticky traps"
+      ]
+    },
+    {
+      "index": 49,
+      "id": "TG050",
+      "crop": "Tomato",
+      "problem": "Bacterial wilt",
+      "category": "Disease",
+      "query": "tomato plants wilt suddenly while leaves are still green",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Bacterial wilt",
+      "top1_predicted_crop": "Tomato",
+      "top1_score": 0.7879,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 50,
+      "id": "TG051",
+      "crop": "Tomato",
+      "problem": "Blossom end rot",
+      "category": "Nutrient Deficiency",
+      "query": "bottom of my tomatoes turning black and sunken",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Blossom end rot",
+      "top1_predicted_crop": "Tomato",
+      "top1_score": 0.887,
+      "matched_recipes": [
+        "NADEP / pit compost",
+        "Gypsum"
+      ]
+    },
+    {
+      "index": 51,
+      "id": "TG052",
+      "crop": "Sunflower",
+      "problem": "Downy mildew",
+      "category": "Disease",
+      "query": "sunflower plants stunted with yellow leaves and white growth below",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Downy mildew",
+      "top1_predicted_crop": "Sunflower",
+      "top1_score": 0.887,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 52,
+      "id": "TG053",
+      "crop": "Sunflower",
+      "problem": "Head borer and hairy caterpillar",
+      "category": "Pest",
+      "query": "sunflower heads have holes and caterpillars",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Head borer and hairy caterpillar",
+      "top1_predicted_crop": "Sunflower",
+      "top1_score": 0.8844,
+      "matched_recipes": [
+        "HaNPV / SlNPV"
+      ]
+    },
+    {
+      "index": 53,
+      "id": "TG054",
+      "crop": "Sunflower",
+      "problem": "Poor seed set (empty seeds in head)",
+      "category": "Crop Management",
+      "query": "sunflower heads have many empty seeds",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Poor seed set (empty seeds in head)",
+      "top1_predicted_crop": "Sunflower",
+      "top1_score": 0.8881,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Sour buttermilk spray"
+      ]
+    },
+    {
+      "index": 54,
+      "id": "TG055",
+      "crop": "Sorghum",
+      "problem": "Shoot fly",
+      "category": "Pest",
+      "query": "sorghum seedling central leaf dries and can be pulled out",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Shoot fly",
+      "top1_predicted_crop": "Sorghum",
+      "top1_score": 0.7588,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 55,
+      "id": "TG056",
+      "crop": "Sorghum",
+      "problem": "Fall armyworm",
+      "category": "Pest",
+      "query": "sorghum whorl has droppings and leaves eaten",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fall armyworm",
+      "top1_predicted_crop": "Sorghum",
+      "top1_score": 0.8084,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 56,
+      "id": "TG057",
+      "crop": "Bengal Gram",
+      "problem": "Fusarium wilt",
+      "category": "Disease",
+      "query": "bengal gram plants drying in patches at early stage",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fusarium wilt",
+      "top1_predicted_crop": "Bengal Gram",
+      "top1_score": 0.8266,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 57,
+      "id": "TG058",
+      "crop": "Bengal Gram",
+      "problem": "Pod borer",
+      "category": "Pest",
+      "query": "worm eating bengal gram pods and seeds",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Pod borer",
+      "top1_predicted_crop": "Bengal Gram",
+      "top1_score": 0.8954,
+      "matched_recipes": [
+        "HaNPV / SlNPV",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 58,
+      "id": "TG059",
+      "crop": "Sugarcane",
+      "problem": "Early shoot borer and internode borer",
+      "category": "Pest",
+      "query": "sugarcane central shoot drying and can be pulled out with bad smell",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Early shoot borer and internode borer",
+      "top1_predicted_crop": "Sugarcane",
+      "top1_score": 0.726,
+      "matched_recipes": [
+        "Trichogramma egg parasitoid cards"
+      ]
+    },
+    {
+      "index": 59,
+      "id": "TG060",
+      "crop": "Sugarcane",
+      "problem": "Woolly aphid",
+      "category": "Pest",
+      "query": "white cotton like growth under sugarcane leaves",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Woolly aphid",
+      "top1_predicted_crop": "Sugarcane",
+      "top1_score": 0.8582,
+      "matched_recipes": [
+        "Jeevamrutham"
+      ]
+    },
+    {
+      "index": 60,
+      "id": "TG061",
+      "crop": "Sugarcane",
+      "problem": "Red rot",
+      "category": "Disease",
+      "query": "sugarcane inside is red with white bands and smells sour",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Red rot",
+      "top1_predicted_crop": "Sugarcane",
+      "top1_score": 0.8763,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 61,
+      "id": "TG062",
+      "crop": "Sugarcane",
+      "problem": "Soil fertility decline in ratoon cane",
+      "category": "Soil Health",
+      "query": "how to improve soil in sugarcane without more fertilizer",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Soil fertility decline in ratoon cane",
+      "top1_predicted_crop": "Sugarcane",
+      "top1_score": 0.6878,
+      "matched_recipes": [
+        "Green manure (dhaincha / sunhemp)",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 62,
+      "id": "TG063",
+      "crop": "Mango",
+      "problem": "Mango hopper",
+      "category": "Pest",
+      "query": "mango flowers dropping with sticky coating and black mould",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Mango hopper",
+      "top1_predicted_crop": "Mango",
+      "top1_score": 0.9008,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 63,
+      "id": "TG064",
+      "crop": "Mango",
+      "problem": "Powdery mildew",
+      "category": "Disease",
+      "query": "white powder on mango flowers and flowers dropping",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Powdery mildew",
+      "top1_predicted_crop": "Mango",
+      "top1_score": 0.9256,
+      "matched_recipes": [
+        "Wettable sulphur"
+      ]
+    },
+    {
+      "index": 64,
+      "id": "TG065",
+      "crop": "Mango",
+      "problem": "Fruit fly",
+      "category": "Pest",
+      "query": "maggots inside ripe mango fruit",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fruit fly",
+      "top1_predicted_crop": "Mango",
+      "top1_score": 0.8679,
+      "matched_recipes": [
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 65,
+      "id": "TG066",
+      "crop": "Okra",
+      "problem": "Yellow vein mosaic virus",
+      "category": "Disease",
+      "query": "okra leaves have yellow veins and fruits small and pale",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Yellow vein mosaic virus",
+      "top1_predicted_crop": "Okra",
+      "top1_score": 0.8131,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Yellow and blue sticky traps"
+      ]
+    },
+    {
+      "index": 66,
+      "id": "TG067",
+      "crop": "Brinjal",
+      "problem": "Shoot and fruit borer",
+      "category": "Pest",
+      "query": "brinjal shoots drooping and fruits have holes with excreta",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Shoot and fruit borer",
+      "top1_predicted_crop": "Brinjal",
+      "top1_score": 0.8629,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 67,
+      "id": "TG068",
+      "crop": "All Crops",
+      "problem": "Low organic carbon in red (chalka) soils",
+      "category": "Soil Health",
+      "query": "how to improve red sandy soil for better crop growth",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Low organic carbon in red (chalka) soils",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8123,
+      "matched_recipes": [
+        "Green manure (dhaincha / sunhemp)",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 68,
+      "id": "TG069",
+      "crop": "All Crops",
+      "problem": "Low soil microbial activity",
+      "category": "Soil Health",
+      "query": "how to restore soil life after using chemical fertilizers",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Low soil microbial activity",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.7643,
+      "matched_recipes": [
+        "Jeevamrutham",
+        "Vermicompost"
+      ]
+    },
+    {
+      "index": 69,
+      "id": "TG070",
+      "crop": "All Crops",
+      "problem": "Sucking pests in general (aphids, jassids, mealybugs)",
+      "category": "Pest",
+      "query": "small insects sucking sap from my plants and leaves curling",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Sucking pests in general (aphids, jassids, mealybugs)",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.7647,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 70,
+      "id": "TG071",
+      "crop": "All Crops",
+      "problem": "Weed pressure in organic fields",
+      "category": "Weed",
+      "query": "how to control weeds in organic farming",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Weed pressure in organic fields",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8579,
+      "matched_recipes": [
+        "Green manure (dhaincha / sunhemp)"
+      ]
+    },
+    {
+      "index": 71,
+      "id": "TG072",
+      "crop": "Paddy",
+      "problem": "Gall midge",
+      "category": "Pest",
+      "query": "tube like silver shoot in paddy instead of panicle",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Gall midge",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.726,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Trichogramma egg parasitoid cards"
+      ]
+    },
+    {
+      "index": 72,
+      "id": "TG073",
+      "crop": "Paddy",
+      "problem": "Brown spot",
+      "category": "Disease",
+      "query": "paddy leaves have brown oval spots and grains are discoloured",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Brown spot",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.8337,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 73,
+      "id": "TG074",
+      "crop": "Paddy",
+      "problem": "Gundhi bug (rice ear-head bug)",
+      "category": "Pest",
+      "query": "bad smell in paddy field and empty grains at milky stage",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Gundhi bug (rice ear-head bug)",
+      "top1_predicted_crop": "Paddy",
+      "top1_score": 0.7879,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 74,
+      "id": "TG075",
+      "crop": "Cotton",
+      "problem": "Mealybug",
+      "category": "Pest",
+      "query": "white waxy cotton-like insects on cotton stem and ants climbing",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Mealybug",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.9008,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 75,
+      "id": "TG076",
+      "crop": "Cotton",
+      "problem": "Boll rot in wet weather",
+      "category": "Crop Management",
+      "query": "cotton bolls are rotting after heavy rain",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Boll rot in wet weather",
+      "top1_predicted_crop": "Cotton",
+      "top1_score": 0.8903,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 76,
+      "id": "TG077",
+      "crop": "Maize",
+      "problem": "Banded leaf and sheath blight",
+      "category": "Disease",
+      "query": "maize stem sheath has brown bands and spreads upward",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Banded leaf and sheath blight",
+      "top1_predicted_crop": "Maize",
+      "top1_score": 0.8788,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 77,
+      "id": "TG078",
+      "crop": "Maize",
+      "problem": "Downy mildew",
+      "category": "Disease",
+      "query": "maize leaves have yellow white stripes and plants stunted",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Downy mildew",
+      "top1_predicted_crop": "Maize",
+      "top1_score": 0.9283,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 78,
+      "id": "TG079",
+      "crop": "Red Gram",
+      "problem": "Spotted pod borer and leaf webber",
+      "category": "Pest",
+      "query": "flowers and leaves of red gram stuck together with caterpillar inside",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Spotted pod borer and leaf webber",
+      "top1_predicted_crop": "Red Gram",
+      "top1_score": 0.8475,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Bacillus thuringiensis (Bt)"
+      ]
+    },
+    {
+      "index": 79,
+      "id": "TG080",
+      "crop": "Chilli",
+      "problem": "Powdery mildew",
+      "category": "Disease",
+      "query": "white powder under chilli leaves and yellow spots on top",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Powdery mildew",
+      "top1_predicted_crop": "Chilli",
+      "top1_score": 0.913,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Wettable sulphur"
+      ]
+    },
+    {
+      "index": 80,
+      "id": "TG081",
+      "crop": "Chilli",
+      "problem": "Wilt and root rot",
+      "category": "Disease",
+      "query": "chilli plants wilting and drying with brown roots",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Wilt and root rot",
+      "top1_predicted_crop": "Chilli",
+      "top1_score": 0.8623,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 81,
+      "id": "TG082",
+      "crop": "Groundnut",
+      "problem": "Rust",
+      "category": "Disease",
+      "query": "orange powder spots under groundnut leaves",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Rust",
+      "top1_predicted_crop": "Groundnut",
+      "top1_score": 0.917,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 82,
+      "id": "TG083",
+      "crop": "Groundnut",
+      "problem": "Bud necrosis virus",
+      "category": "Disease",
+      "query": "groundnut top buds drying and plants stunted with ring spots",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Bud necrosis virus",
+      "top1_predicted_crop": "Groundnut",
+      "top1_score": 0.7794,
+      "matched_recipes": [
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 83,
+      "id": "TG084",
+      "crop": "Tomato",
+      "problem": "Leaf miner (Tuta absoluta)",
+      "category": "Pest",
+      "query": "white zig-zag lines on tomato leaves and tunnels in fruits",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Leaf miner (Tuta absoluta)",
+      "top1_predicted_crop": "Tomato",
+      "top1_score": 0.8772,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 84,
+      "id": "TG085",
+      "crop": "Tomato",
+      "problem": "Late blight",
+      "category": "Disease",
+      "query": "tomato leaves black water soaked patches in cool wet weather",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Late blight",
+      "top1_predicted_crop": "Tomato",
+      "top1_score": 0.8832,
+      "matched_recipes": [
+        "Bordeaux mixture 1%"
+      ]
+    },
+    {
+      "index": 85,
+      "id": "TG086",
+      "crop": "Tomato",
+      "problem": "Root-knot nematode",
+      "category": "Pest",
+      "query": "knots on tomato roots and plants weak and wilting",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Root-knot nematode",
+      "top1_predicted_crop": "Tomato",
+      "top1_score": 0.7869,
+      "matched_recipes": [
+        "Neem cake",
+        "Paecilomyces lilacinus"
+      ]
+    },
+    {
+      "index": 86,
+      "id": "TG087",
+      "crop": "Sugarcane",
+      "problem": "Pyrilla",
+      "category": "Pest",
+      "query": "sugarcane leaves sticky with black coating and hopping insects",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Pyrilla",
+      "top1_predicted_crop": "Sugarcane",
+      "top1_score": 0.8773,
+      "matched_recipes": [
+        "Trichogramma egg parasitoid cards"
+      ]
+    },
+    {
+      "index": 87,
+      "id": "TG088",
+      "crop": "Sunflower",
+      "problem": "Alternaria leaf blight",
+      "category": "Disease",
+      "query": "sunflower leaves with dark brown round spots and falling early",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Alternaria leaf blight",
+      "top1_predicted_crop": "Sunflower",
+      "top1_score": 0.9071,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 88,
+      "id": "TG089",
+      "crop": "Mango",
+      "problem": "Mealybug",
+      "category": "Pest",
+      "query": "white insects climbing mango tree trunk in winter",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Mealybug",
+      "top1_predicted_crop": "Mango",
+      "top1_score": 0.8839,
+      "matched_recipes": [
+        "Beauveria bassiana"
+      ]
+    },
+    {
+      "index": 89,
+      "id": "TG090",
+      "crop": "Mango",
+      "problem": "Anthracnose and blossom blight",
+      "category": "Disease",
+      "query": "mango flowers turning black and fruit with black spots",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Anthracnose and blossom blight",
+      "top1_predicted_crop": "Mango",
+      "top1_score": 0.9123,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 90,
+      "id": "TG091",
+      "crop": "Sorghum",
+      "problem": "Charcoal rot",
+      "category": "Disease",
+      "query": "sorghum stalks falling and inside shredded with black dots",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Charcoal rot",
+      "top1_predicted_crop": "Sorghum",
+      "top1_score": 0.8567,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 91,
+      "id": "TG092",
+      "crop": "Okra",
+      "problem": "Shoot and fruit borer",
+      "category": "Pest",
+      "query": "okra shoots drooping and fruits have holes",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Shoot and fruit borer",
+      "top1_predicted_crop": "Okra",
+      "top1_score": 0.8775,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 92,
+      "id": "TG093",
+      "crop": "Green Gram",
+      "problem": "Yellow mosaic virus",
+      "category": "Disease",
+      "query": "green gram leaves with yellow patches and few pods",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Yellow mosaic virus",
+      "top1_predicted_crop": "Green Gram",
+      "top1_score": 0.8061,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Yellow and blue sticky traps"
+      ]
+    },
+    {
+      "index": 93,
+      "id": "TG094",
+      "crop": "Green Gram",
+      "problem": "Powdery mildew",
+      "category": "Disease",
+      "query": "white powder on green gram leaves",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Powdery mildew",
+      "top1_predicted_crop": "Green Gram",
+      "top1_score": 0.9265,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Wettable sulphur"
+      ]
+    },
+    {
+      "index": 94,
+      "id": "TG095",
+      "crop": "Green Gram",
+      "problem": "Pod borer and Maruca",
+      "category": "Pest",
+      "query": "green gram pods have holes and caterpillars",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Pod borer and Maruca",
+      "top1_predicted_crop": "Green Gram",
+      "top1_score": 0.8893,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "HaNPV / SlNPV"
+      ]
+    },
+    {
+      "index": 95,
+      "id": "TG096",
+      "crop": "Black Gram",
+      "problem": "Leaf crinkle virus",
+      "category": "Disease",
+      "query": "black gram leaves crinkled and plants stunted",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Leaf crinkle virus",
+      "top1_predicted_crop": "Black Gram",
+      "top1_score": 0.814,
+      "matched_recipes": [
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 96,
+      "id": "TG097",
+      "crop": "Black Gram",
+      "problem": "Yellow mosaic virus",
+      "category": "Disease",
+      "query": "black gram leaves with yellow mottling",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Yellow mosaic virus",
+      "top1_predicted_crop": "Black Gram",
+      "top1_score": 0.7788,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Yellow and blue sticky traps"
+      ]
+    },
+    {
+      "index": 97,
+      "id": "TG098",
+      "crop": "Sesame",
+      "problem": "Phyllody",
+      "category": "Disease",
+      "query": "sesame flowers turning into green leaves with no capsules",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Phyllody",
+      "top1_predicted_crop": "Sesame",
+      "top1_score": 0.8618,
+      "matched_recipes": [
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 98,
+      "id": "TG099",
+      "crop": "Sesame",
+      "problem": "Leaf webber and capsule borer",
+      "category": "Pest",
+      "query": "sesame leaves webbed together and capsules bored",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Leaf webber and capsule borer",
+      "top1_predicted_crop": "Sesame",
+      "top1_score": 0.8978,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 99,
+      "id": "TG100",
+      "crop": "Sesame",
+      "problem": "Stem and root rot",
+      "category": "Disease",
+      "query": "sesame plants drying with black collar",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Stem and root rot",
+      "top1_predicted_crop": "Sesame",
+      "top1_score": 0.8625,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 100,
+      "id": "TG101",
+      "crop": "Castor",
+      "problem": "Semilooper",
+      "category": "Pest",
+      "query": "caterpillars eating castor leaves completely",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Semilooper",
+      "top1_predicted_crop": "Castor",
+      "top1_score": 0.8303,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "HaNPV / SlNPV"
+      ]
+    },
+    {
+      "index": 101,
+      "id": "TG102",
+      "crop": "Castor",
+      "problem": "Fusarium wilt",
+      "category": "Disease",
+      "query": "castor plants wilting and drying in patches",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fusarium wilt",
+      "top1_predicted_crop": "Castor",
+      "top1_score": 0.8877,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 102,
+      "id": "TG103",
+      "crop": "Castor",
+      "problem": "Grey mould (spike rot)",
+      "category": "Disease",
+      "query": "castor spikes rotting with grey mould in humid weather",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Grey mould (spike rot)",
+      "top1_predicted_crop": "Castor",
+      "top1_score": 0.7768,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 103,
+      "id": "TG104",
+      "crop": "Safflower",
+      "problem": "Aphids",
+      "category": "Pest",
+      "query": "aphids on safflower shoots and plants are sticky",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Aphids",
+      "top1_predicted_crop": "Safflower",
+      "top1_score": 0.8506,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 104,
+      "id": "TG105",
+      "crop": "Safflower",
+      "problem": "Alternaria leaf spot",
+      "category": "Disease",
+      "query": "safflower leaves with brown ring spots and drying",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Alternaria leaf spot",
+      "top1_predicted_crop": "Safflower",
+      "top1_score": 0.9065,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 105,
+      "id": "TG106",
+      "crop": "Pearl Millet",
+      "problem": "Downy mildew (green ear)",
+      "category": "Disease",
+      "query": "pearl millet ears turning green and leafy",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Downy mildew (green ear)",
+      "top1_predicted_crop": "Pearl Millet",
+      "top1_score": 0.9078,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 106,
+      "id": "TG107",
+      "crop": "Pearl Millet",
+      "problem": "Ergot",
+      "category": "Disease",
+      "query": "honey like liquid on pearl millet ears and black bodies in place of grains",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Ergot",
+      "top1_predicted_crop": "Pearl Millet",
+      "top1_score": 0.8448,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 107,
+      "id": "TG108",
+      "crop": "Onion",
+      "problem": "Thrips",
+      "category": "Pest",
+      "query": "onion leaves with silver streaks and tips twisted",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Thrips",
+      "top1_predicted_crop": "Onion",
+      "top1_score": 0.8909,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Yellow and blue sticky traps"
+      ]
+    },
+    {
+      "index": 108,
+      "id": "TG109",
+      "crop": "Onion",
+      "problem": "Purple blotch",
+      "category": "Disease",
+      "query": "onion leaves have purple blotches with yellow edges",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Purple blotch",
+      "top1_predicted_crop": "Onion",
+      "top1_score": 0.9449,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 109,
+      "id": "TG110",
+      "crop": "Onion",
+      "problem": "Basal rot",
+      "category": "Disease",
+      "query": "onion bulb base rotting and leaves yellowing",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Basal rot",
+      "top1_predicted_crop": "Onion",
+      "top1_score": 0.9023,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 110,
+      "id": "TG111",
+      "crop": "Banana",
+      "problem": "Panama wilt",
+      "category": "Disease",
+      "query": "banana leaves yellowing from bottom and pseudostem cracking",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Panama wilt",
+      "top1_predicted_crop": "Banana",
+      "top1_score": 0.9147,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 111,
+      "id": "TG112",
+      "crop": "Banana",
+      "problem": "Sigatoka leaf spot",
+      "category": "Disease",
+      "query": "banana leaves with brown streaks and spots drying",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Sigatoka leaf spot",
+      "top1_predicted_crop": "Banana",
+      "top1_score": 0.926,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Pseudomonas fluorescens"
+      ]
+    },
+    {
+      "index": 112,
+      "id": "TG113",
+      "crop": "Banana",
+      "problem": "Rhizome and pseudostem weevil",
+      "category": "Pest",
+      "query": "banana plant toppling and stem has holes and oozing",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Rhizome and pseudostem weevil",
+      "top1_predicted_crop": "Banana",
+      "top1_score": 0.8404,
+      "matched_recipes": [
+        "Neem cake"
+      ]
+    },
+    {
+      "index": 113,
+      "id": "TG114",
+      "crop": "Papaya",
+      "problem": "Papaya ringspot virus",
+      "category": "Disease",
+      "query": "papaya leaves mosaic and fruits with ring spots",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Papaya ringspot virus",
+      "top1_predicted_crop": "Papaya",
+      "top1_score": 0.8416,
+      "matched_recipes": [
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 114,
+      "id": "TG115",
+      "crop": "Papaya",
+      "problem": "Papaya mealybug",
+      "category": "Pest",
+      "query": "white cotton like insects on papaya leaves and fruits",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Papaya mealybug",
+      "top1_predicted_crop": "Papaya",
+      "top1_score": 0.901,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Trichogramma egg parasitoid cards"
+      ]
+    },
+    {
+      "index": 115,
+      "id": "TG116",
+      "crop": "Papaya",
+      "problem": "Foot rot and stem rot",
+      "category": "Disease",
+      "query": "papaya stem base rotting and plant collapses",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Foot rot and stem rot",
+      "top1_predicted_crop": "Papaya",
+      "top1_score": 0.8509,
+      "matched_recipes": [
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 116,
+      "id": "TG117",
+      "crop": "Citrus",
+      "problem": "Leaf miner",
+      "category": "Pest",
+      "query": "citrus young leaves with silvery tunnels and curling",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Leaf miner",
+      "top1_predicted_crop": "Citrus",
+      "top1_score": 0.8107,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 117,
+      "id": "TG118",
+      "crop": "Citrus",
+      "problem": "Citrus canker",
+      "category": "Disease",
+      "query": "citrus leaves and fruits have raised brown corky spots",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Citrus canker",
+      "top1_predicted_crop": "Citrus",
+      "top1_score": 0.7677,
+      "matched_recipes": [
+        "Bordeaux mixture 1%"
+      ]
+    },
+    {
+      "index": 118,
+      "id": "TG119",
+      "crop": "Citrus",
+      "problem": "Gummosis (foot rot)",
+      "category": "Disease",
+      "query": "gum oozing from citrus trunk and bark rotting",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Gummosis (foot rot)",
+      "top1_predicted_crop": "Citrus",
+      "top1_score": 0.882,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "Bordeaux mixture 1%"
+      ]
+    },
+    {
+      "index": 119,
+      "id": "TG120",
+      "crop": "Guava",
+      "problem": "Fruit fly",
+      "category": "Pest",
+      "query": "maggots inside guava fruit and fruits dropping",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fruit fly",
+      "top1_predicted_crop": "Guava",
+      "top1_score": 0.9107,
+      "matched_recipes": [
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 120,
+      "id": "TG121",
+      "crop": "Guava",
+      "problem": "Wilt",
+      "category": "Disease",
+      "query": "guava tree branches drying suddenly with leaf fall",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Wilt",
+      "top1_predicted_crop": "Guava",
+      "top1_score": 0.9469,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 121,
+      "id": "TG122",
+      "crop": "Pomegranate",
+      "problem": "Bacterial blight (telya)",
+      "category": "Disease",
+      "query": "pomegranate fruits with black spots and cracking",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Bacterial blight (telya)",
+      "top1_predicted_crop": "Pomegranate",
+      "top1_score": 0.7744,
+      "matched_recipes": [
+        "Bordeaux mixture 1%"
+      ]
+    },
+    {
+      "index": 122,
+      "id": "TG123",
+      "crop": "Pomegranate",
+      "problem": "Fruit borer (anar butterfly)",
+      "category": "Pest",
+      "query": "caterpillar inside pomegranate fruit and fruit rotting",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fruit borer (anar butterfly)",
+      "top1_predicted_crop": "Pomegranate",
+      "top1_score": 0.912,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 123,
+      "id": "TG124",
+      "crop": "Oil Palm",
+      "problem": "Basal stem rot",
+      "category": "Disease",
+      "query": "oil palm fronds drooping and mushroom like bodies at base",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Basal stem rot",
+      "top1_predicted_crop": "Oil Palm",
+      "top1_score": 0.8139,
+      "matched_recipes": [
+        "Trichoderma viride",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 124,
+      "id": "TG125",
+      "crop": "Oil Palm",
+      "problem": "Rhinoceros beetle",
+      "category": "Pest",
+      "query": "oil palm crown damaged with V shaped cuts in fronds",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Rhinoceros beetle",
+      "top1_predicted_crop": "Oil Palm",
+      "top1_score": 0.7664,
+      "matched_recipes": [
+        "Pheromone traps",
+        "Metarhizium anisopliae"
+      ]
+    },
+    {
+      "index": 125,
+      "id": "TG126",
+      "crop": "Cabbage And Cauliflower",
+      "problem": "Diamondback moth",
+      "category": "Pest",
+      "query": "small holes in cabbage leaves and green worms inside",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Diamondback moth",
+      "top1_predicted_crop": "Cabbage And Cauliflower",
+      "top1_score": 0.813,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Bacillus thuringiensis (Bt)"
+      ]
+    },
+    {
+      "index": 126,
+      "id": "TG127",
+      "crop": "Cabbage And Cauliflower",
+      "problem": "Black rot",
+      "category": "Disease",
+      "query": "cabbage leaf edges with yellow V shaped patches and black veins",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Black rot",
+      "top1_predicted_crop": "Cabbage And Cauliflower",
+      "top1_score": 0.9066,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%"
+      ]
+    },
+    {
+      "index": 127,
+      "id": "TG128",
+      "crop": "Cucurbits",
+      "problem": "Fruit fly",
+      "category": "Pest",
+      "query": "maggots in bitter gourd and gourd fruits and fruits rotting",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Fruit fly",
+      "top1_predicted_crop": "Cucurbits",
+      "top1_score": 0.8934,
+      "matched_recipes": [
+        "Pheromone traps"
+      ]
+    },
+    {
+      "index": 128,
+      "id": "TG129",
+      "crop": "Cucurbits",
+      "problem": "Powdery mildew",
+      "category": "Disease",
+      "query": "white powder on gourd leaves and drying",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Powdery mildew",
+      "top1_predicted_crop": "Cucurbits",
+      "top1_score": 0.8772,
+      "matched_recipes": [
+        "Neem oil spray",
+        "Sour buttermilk spray"
+      ]
+    },
+    {
+      "index": 129,
+      "id": "TG130",
+      "crop": "Cucurbits",
+      "problem": "Red pumpkin beetle",
+      "category": "Pest",
+      "query": "orange beetles eating cucurbit leaves and flowers",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Red pumpkin beetle",
+      "top1_predicted_crop": "Cucurbits",
+      "top1_score": 0.8658,
+      "matched_recipes": [
+        "Neem Seed Kernel Extract (NSKE) 5%",
+        "Wood ash"
+      ]
+    },
+    {
+      "index": 130,
+      "id": "TG131",
+      "crop": "Marigold",
+      "problem": "Red spider mite",
+      "category": "Pest",
+      "query": "marigold leaves bronze with fine webbing",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Red spider mite",
+      "top1_predicted_crop": "Marigold",
+      "top1_score": 0.8053,
+      "matched_recipes": [
+        "Neem oil spray"
+      ]
+    },
+    {
+      "index": 131,
+      "id": "TG132",
+      "crop": "All Crops",
+      "problem": "Phosphorus deficiency",
+      "category": "Nutrient Deficiency",
+      "query": "leaves purple and plants stunted slow growth",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Phosphorus deficiency",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8149,
+      "matched_recipes": [
+        "NADEP / pit compost",
+        "Phosphate solubilizing bacteria (PSB)"
+      ]
+    },
+    {
+      "index": 132,
+      "id": "TG133",
+      "crop": "All Crops",
+      "problem": "Potassium deficiency",
+      "category": "Nutrient Deficiency",
+      "query": "leaf edges burnt and dry on older leaves",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Potassium deficiency",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.7446,
+      "matched_recipes": [
+        "NADEP / pit compost",
+        "Potassium mobilizing bacteria (KMB)"
+      ]
+    },
+    {
+      "index": 133,
+      "id": "TG134",
+      "crop": "All Crops",
+      "problem": "Iron chlorosis",
+      "category": "Nutrient Deficiency",
+      "query": "young leaves yellow but veins green",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Iron chlorosis",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8897,
+      "matched_recipes": [
+        "Vermicompost",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 134,
+      "id": "TG135",
+      "crop": "All Crops",
+      "problem": "Sulphur deficiency (pulses and oilseeds)",
+      "category": "Nutrient Deficiency",
+      "query": "young leaves pale yellow in groundnut sunflower or pulses",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Sulphur deficiency (pulses and oilseeds)",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.7898,
+      "matched_recipes": [
+        "NADEP / pit compost",
+        "Gypsum"
+      ]
+    },
+    {
+      "index": 135,
+      "id": "TG136",
+      "crop": "All Crops",
+      "problem": "Soil salinity and alkalinity",
+      "category": "Soil Health",
+      "query": "white salt layer on soil and poor germination",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Soil salinity and alkalinity",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.9099,
+      "matched_recipes": [
+        "Green manure (dhaincha / sunhemp)",
+        "Gypsum"
+      ]
+    },
+    {
+      "index": 136,
+      "id": "TG137",
+      "crop": "All Crops",
+      "problem": "Soil erosion in red soils",
+      "category": "Soil Health",
+      "query": "topsoil washing away in red soil during rains",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Soil erosion in red soils",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8656,
+      "matched_recipes": [
+        "Jeevamrutham"
+      ]
+    },
+    {
+      "index": 137,
+      "id": "TG138",
+      "crop": "All Crops",
+      "problem": "Hard pan and compaction",
+      "category": "Soil Health",
+      "query": "soil hard below plough layer and roots not going deep",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Hard pan and compaction",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8961,
+      "matched_recipes": [
+        "Green manure (dhaincha / sunhemp)",
+        "NADEP / pit compost"
+      ]
+    },
+    {
+      "index": 138,
+      "id": "TG139",
+      "crop": "All Crops",
+      "problem": "Termites",
+      "category": "Pest",
+      "query": "white ants eating roots and plants drying",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Termites",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8407,
+      "matched_recipes": [
+        "NADEP / pit compost",
+        "Neem cake"
+      ]
+    },
+    {
+      "index": 139,
+      "id": "TG140",
+      "crop": "All Crops",
+      "problem": "Moisture stress in dry spells",
+      "category": "Crop Management",
+      "query": "crops wilting during long dry spell",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Moisture stress in dry spells",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8209,
+      "matched_recipes": [
+        "Jeevamrutham"
+      ]
+    },
+    {
+      "index": 140,
+      "id": "TG141",
+      "crop": "All Crops",
+      "problem": "Poor germination and weak seedlings",
+      "category": "Crop Management",
+      "query": "seeds not germinating and weak seedlings",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Poor germination and weak seedlings",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.8861,
+      "matched_recipes": [
+        "Beejamrutham",
+        "Trichoderma viride"
+      ]
+    },
+    {
+      "index": 141,
+      "id": "TG142",
+      "crop": "All Crops",
+      "problem": "Pulse beetle in stored pulses",
+      "category": "Pest",
+      "query": "insects and holes in stored red gram and green gram",
+      "rank": 1,
+      "top1_match": true,
+      "top3_match": true,
+      "top1_predicted_problem": "Pulse beetle in stored pulses",
+      "top1_predicted_crop": "All Crops",
+      "top1_score": 0.7187,
+      "matched_recipes": [
+        "Jeevamrutham"
+      ]
+    }
+  ]
+}
