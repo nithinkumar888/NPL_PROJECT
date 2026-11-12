@@ -1031,4 +1031,21 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if st.runtime.exists():
+        main()
+    else:
+        import sys
+        from streamlit.web import cli as stcli
+        port = os.environ.get("PORT", "8501")
+        sys.argv = [
+            "streamlit",
+            "run",
+            __file__,
+            "--server.port",
+            str(port),
+            "--server.address",
+            "0.0.0.0",
+            "--server.headless",
+            "true",
+        ]
+        sys.exit(stcli.main())
