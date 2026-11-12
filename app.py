@@ -437,39 +437,30 @@ def main():
         def select_crop_action(crop_name: str):
             st.session_state["selected_crop"] = crop_name
             st.session_state["sidebar_crop_select"] = crop_name
-            cur_season = st.session_state.get("selected_season", SEASONS_LIST[0])
-            cur_dist = st.session_state.get("selected_district", TELANGANA_DISTRICTS_LIST[0])
-            st.session_state[f"crop_switcher_{crop_name}"] = crop_name
-            st.session_state[f"crop_season_{crop_name}"] = cur_season
-            st.session_state[f"crop_district_{crop_name}"] = cur_dist
-            st.session_state["farmer_query"] = ""
-            st.session_state["direct_problem_choice"] = "✨ Auto-Suggest Prevalent Threats"
+            if crop_name != "All Crops":
+                c_df = tel_df[tel_df["crop"].str.lower() == crop_name.lower()]
+                if not c_df.empty:
+                    st.session_state["farmer_query"] = c_df["farmer_query_example"].iloc[0]
+            else:
+                st.session_state["farmer_query"] = "my paddy is drying in circles and small brown insects at the bottom of plants"
 
-        def select_problem_action(prob_name: str, query_example: str, crop_name: str):
-            st.session_state["farmer_query"] = query_example
-            st.session_state["direct_problem_choice"] = prob_name
-            st.session_state[f"select_prob_{crop_name}"] = prob_name
-
-        def clear_crop_query_action(crop_name: str):
-            st.session_state["farmer_query"] = ""
-            st.session_state["direct_problem_choice"] = "✨ Auto-Suggest Prevalent Threats"
-            st.session_state[f"select_prob_{crop_name}"] = "✨ Auto-Suggest Prevalent Threats"
-
-        # Quick navigation bar when in All Crops mode
-        if chosen_crop == "All Crops":
-            st.markdown("**🌾 Quick Crop Focus (సత్వర పంట ఎంపిక):**")
-            quick_crops = ["Paddy", "Cotton", "Chilli", "Tomato", "Groundnut", "Maize", "Banana", "Red Gram"]
-            q_cols = st.columns(len(quick_crops))
-            for i, qc in enumerate(quick_crops):
-                icon = CROP_ICONS.get(qc, "🌱")
-                q_cols[i].button(
-                    f"{icon} {qc}",
-                    key=f"btn_quick_crop_{qc}",
-                    use_container_width=True,
-                    on_click=select_crop_action,
-                    args=(qc,)
-                )
-            st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+        # Quick crop focus navigation bar (Always available on main screen)
+        st.markdown("**🌾 Quick Crop Focus (సత్వర పంట ఎంపిక):**")
+        quick_crops = ["All Crops", "Paddy", "Cotton", "Chilli", "Tomato", "Groundnut", "Maize", "Banana", "Red Gram"]
+        q_cols = st.columns(len(quick_crops))
+        for i, qc in enumerate(quick_crops):
+            icon = CROP_ICONS.get(qc, "🌱")
+            is_active = (qc == chosen_crop)
+            label = f"{icon} {qc}" if not is_active else f"👉 {icon} {qc}"
+            q_cols[i].button(
+                label,
+                key=f"btn_quick_crop_{qc}",
+                use_container_width=True,
+                on_click=select_crop_action,
+                args=(qc,),
+                type="primary" if is_active else "secondary"
+            )
+        st.markdown("<div style='height: 8px;'></div>", unsafe_allow_html=True)
 
         engine = get_advisory_engine()
 
@@ -602,354 +593,165 @@ def main():
                     """, unsafe_allow_html=True)
 
         # =========================================================
-        # CASE A: A SPECIFIC CROP IS SELECTED (e.g., Paddy, Cotton, Chilli...)
+        # UNIFIED PROBLEM DIAGNOSIS & ORGANIC ADVISORY WORKFLOW
         # =========================================================
-        if chosen_crop != "All Crops":
-            crop_df = tel_df[tel_df["crop"].str.lower() == chosen_crop.lower()]
-            crop_telugu = crop_df["crop_telugu"].iloc[0] if not crop_df.empty and pd.notna(crop_df["crop_telugu"].iloc[0]) else ""
-            crop_icon = CROP_ICONS.get(chosen_crop, "🌾")
-            season_info = crop_df["season"].iloc[0] if not crop_df.empty and pd.notna(crop_df["season"].iloc[0]) else "Kharif & Rabi"
-            districts_sample = crop_df["major_districts_telangana"].iloc[0] if not crop_df.empty and pd.notna(crop_df["major_districts_telangana"].iloc[0]) else "Telangana"
+        crop_filter_val = None if chosen_crop == "All Crops" else chosen_crop
+        crop_df = tel_df if not crop_filter_val else tel_df[tel_df["crop"].str.lower() == crop_filter_val.lower()]
+        crop_telugu = crop_df["crop_telugu"].iloc[0] if not crop_df.empty and pd.notna(crop_df["crop_telugu"].iloc[0]) else ""
 
-            # Crop Navigation Header Banner & Switcher
-            header_col1, header_col2 = st.columns([3, 1])
-            with header_col1:
-                st.markdown(f"""
-                <div style="background: linear-gradient(135deg, #1b5e20, #2e7d32, #388e3c); color: white; padding: 18px 24px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                    <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
-                        <div>
-                            <h2 style="color:white; margin:0; font-size:1.65rem; font-weight:700;">
-                                {crop_icon} Navigated to: {chosen_crop} ({crop_telugu})
-                            </h2>
-                            <p style="color:#e8f5e9; margin:6px 0 0 0; font-size:0.96rem;">
-                                🌾 Dedicated Organic Advisory • <b>{len(crop_df)} Known Prevalent Issues</b> & Solutions in Telangana
-                            </p>
-                        </div>
-                        <div style="margin-top:6px; display:flex; gap:8px; flex-wrap:wrap;">
-                            <span style="background:rgba(255,255,255,0.22); color:white; padding:6px 14px; border-radius:20px; font-weight:600; font-size:0.85rem;">
-                                🗓️ {selected_season.split('(')[0].strip()}
-                            </span>
-                            <span style="background:rgba(255,255,255,0.22); color:white; padding:6px 14px; border-radius:20px; font-weight:600; font-size:0.85rem;">
-                                📍 {selected_district.split('(')[0].strip()}
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
-            with header_col2:
-                st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
-                st.button(
-                    "🌐 Switch to All Crops",
-                    use_container_width=True,
-                    key="btn_switch_all_crops",
-                    on_click=select_crop_action,
-                    args=("All Crops",)
-                )
-
-                def _on_crop_switcher_change():
-                    new_val = st.session_state[f"crop_switcher_{chosen_crop}"]
-                    select_crop_action(new_val)
-
-                if f"crop_switcher_{chosen_crop}" not in st.session_state:
-                    st.session_state[f"crop_switcher_{chosen_crop}"] = chosen_crop
-                st.selectbox(
-                    "Switch Crop:",
-                    all_crops_list,
-                    key=f"crop_switcher_{chosen_crop}",
-                    on_change=_on_crop_switcher_change
-                )
-
-                def _on_crop_season_change():
-                    new_season = st.session_state[f"crop_season_{chosen_crop}"]
-                    st.session_state["selected_season"] = new_season
-                    st.session_state["sidebar_season_select"] = new_season
-
-                if f"crop_season_{chosen_crop}" not in st.session_state:
-                    st.session_state[f"crop_season_{chosen_crop}"] = st.session_state.get("selected_season", SEASONS_LIST[0])
-                st.selectbox(
-                    "Farming Season (కాలం):",
-                    SEASONS_LIST,
-                    key=f"crop_season_{chosen_crop}",
-                    on_change=_on_crop_season_change
-                )
-
-                def _on_crop_district_change():
-                    new_dist = st.session_state[f"crop_district_{chosen_crop}"]
-                    st.session_state["selected_district"] = new_dist
-                    st.session_state["sidebar_district_select"] = new_dist
-
-                if f"crop_district_{chosen_crop}" not in st.session_state:
-                    st.session_state[f"crop_district_{chosen_crop}"] = st.session_state.get("selected_district", TELANGANA_DISTRICTS_LIST[0])
-                st.selectbox(
-                    "Telangana District (జిల్లా):",
-                    TELANGANA_DISTRICTS_LIST,
-                    key=f"crop_district_{chosen_crop}",
-                    on_change=_on_crop_district_change
-                )
-
-            # Prioritize problems matching the selected season
-            if canon_season != "All Seasons":
-                def _matches_season(s_val):
-                    s_low = str(s_val).lower()
-                    if canon_season == "Kharif":
-                        return "kharif" in s_low or "all" in s_low or "perennial" in s_low
-                    elif canon_season == "Rabi":
-                        return "rabi" in s_low or "all" in s_low or "perennial" in s_low
-                    elif canon_season == "Summer":
-                        return "summer" in s_low or "all" in s_low or "perennial" in s_low
-                    elif canon_season == "Perennial":
-                        return "perennial" in s_low or "annual" in s_low or "year" in s_low or "all" in s_low
-                    return True
-
-                season_matching_df = crop_df[crop_df["season"].apply(_matches_season)]
-                if not season_matching_df.empty:
-                    other_df = crop_df[~crop_df.index.isin(season_matching_df.index)]
-                    crop_df_ordered = pd.concat([season_matching_df, other_df])
-                else:
-                    crop_df_ordered = crop_df
-            else:
-                crop_df_ordered = crop_df
-
-            known_problems = crop_df_ordered["problem_name"].dropna().tolist()
-
-            # Dynamic Clickable Problem Chips for this crop
-            st.markdown(f"**⚡ Prevalent {chosen_crop} Threats (Click to Diagnose):**")
-            chip_count = min(len(known_problems), 5)
-            chip_cols = st.columns(chip_count)
-            for i in range(chip_count):
-                p_name = known_problems[i]
-                p_cat = crop_df[crop_df["problem_name"] == p_name]["problem_category"].iloc[0] if not crop_df.empty else ""
-                cat_symbol = "🐛" if p_cat == "Pest" else ("🍂" if p_cat == "Disease" else "🧪")
-                prob_row = crop_df[crop_df["problem_name"] == p_name].iloc[0]
-                chip_cols[i].button(
-                    f"{cat_symbol} {p_name[:22]}",
-                    key=f"btn_crop_chip_{i}",
-                    use_container_width=True,
-                    on_click=select_problem_action,
-                    args=(p_name, prob_row["farmer_query_example"], chosen_crop)
-                )
-
-            # Direct Problem Dropdown Navigator
-            prob_dropdown_options = ["✨ Auto-Suggest Prevalent Threats"] + known_problems
-            current_choice = st.session_state.get("direct_problem_choice", prob_dropdown_options[0])
-            if current_choice not in prob_dropdown_options:
-                current_choice = prob_dropdown_options[0]
-            choice_idx = prob_dropdown_options.index(current_choice)
-            
-            def _on_prob_navigator_change():
-                st.session_state["direct_problem_choice"] = st.session_state[f"select_prob_{chosen_crop}"]
-
-            selected_problem = st.selectbox(
-                f"🎯 Direct Problem Navigator for {chosen_crop} (Choose a problem to view diagnosis):",
-                prob_dropdown_options,
-                index=choice_idx,
-                key=f"select_prob_{chosen_crop}",
-                on_change=_on_prob_navigator_change
-            )
-
-            # Symptom Description Text Box for this Crop
-            farmer_query = st.text_area(
-                f"💬 Or Describe Observed Symptoms in Your {chosen_crop} Crop (English or Telugu):",
-                value=st.session_state.get("farmer_query", ""),
-                height=75,
-                placeholder=f"e.g. leaves turning yellow, holes in leaves, wilting, or insects seen in {chosen_crop}..."
-            )
-
-            st.markdown("<div style='height: 4px;'></div>", unsafe_allow_html=True)
-            search_col1, search_col2 = st.columns([3, 1])
-            with search_col1:
-                diagnose_btn = st.button(f"🚀 Predict Solutions for {chosen_crop}", type="primary", use_container_width=True)
-            with search_col2:
-                st.button(
-                    "Clear Query",
-                    use_container_width=True,
-                    on_click=clear_crop_query_action,
-                    args=(chosen_crop,)
-                )
-
-            # Render Predictions:
-            # Mode 1: User selected a specific problem directly from dropdown
-            if selected_problem and selected_problem != "✨ Auto-Suggest Prevalent Threats":
-                st.markdown(f"#### 📋 Direct Diagnosis & Organic Solution for: `{selected_problem}`")
-                matched_row = crop_df[crop_df["problem_name"] == selected_problem].iloc[0]
-                
-                # Format directly through advisory engine components
-                sol = matched_row.get("organic_solution", "")
-                app = matched_row.get("how_to_apply", "")
-                cat = matched_row.get("problem_category", "")
-                recipes = engine.recipe_matcher.match_recipes(sol, app, max_recipes=2)
-                practices = engine.get_related_agronomic_practices(chosen_crop, cat, max_practices=1)
-                
-                direct_match = {
-                    "id": matched_row.get("id", ""),
-                    "crop": chosen_crop,
-                    "crop_telugu": crop_telugu,
-                    "season": matched_row.get("season", season_info),
-                    "problem_name": selected_problem,
-                    "causal_agent": matched_row.get("causal_agent", ""),
-                    "problem_category": cat,
-                    "symptoms": matched_row.get("symptoms", ""),
-                    "organic_solution": sol,
-                    "how_to_apply": app,
-                    "preventive_practice": matched_row.get("preventive_practice", ""),
-                    "when_to_seek_help": matched_row.get("when_to_seek_help", ""),
-                    "major_districts": matched_row.get("major_districts_telangana", districts_sample),
-                    "similarity_score": 1.0,
-                    "confidence_percentage": 100.0,
-                    "related_recipes": recipes,
-                    "related_agronomic_practices": practices
-                }
-                render_advisory_card(1, direct_match, expanded=True)
-
-                # Also suggest other related problems for this crop
-                other_probs = [p for p in known_problems if p != selected_problem]
-                if other_probs:
-                    st.markdown(f"##### 🌿 Other Prevalent Issues in {chosen_crop}:")
-                    other_cols = st.columns(min(len(other_probs), 4))
-                    for idx, op in enumerate(other_probs[:4]):
-                        other_row = crop_df[crop_df["problem_name"] == op].iloc[0]
-                        other_cols[idx].button(
-                            f"👉 {op}",
-                            key=f"btn_other_{idx}",
-                            use_container_width=True,
-                            on_click=select_problem_action,
-                            args=(op, other_row["farmer_query_example"], chosen_crop)
-                        )
-
-            # Mode 2: Query / Auto-Suggestions for this crop
-            else:
-                effective_query = farmer_query.strip() if farmer_query.strip() else f"{chosen_crop} major pests diseases and leaf damage"
-                advisory = engine.get_advisory(
-                    farmer_query=effective_query,
-                    top_k=min(top_k, max(len(crop_df), 1)),
-                    crop_filter=chosen_crop,
-                    district_filter=canon_district if canon_district != "All Districts" else None,
-                    season_filter=canon_season if canon_season != "All Seasons" else None
-                )
-                matches = advisory.get("matches", [])
-                st.markdown(f"#### 📋 Top {len(matches)} Predicted Recommendations for {chosen_crop}:")
-                caption_items = []
-                if canon_season != "All Seasons":
-                    caption_items.append(f"🗓️ Season: **{selected_season.split('(')[0].strip()}**")
-                if canon_district != "All Districts":
-                    caption_items.append(f"📍 District: **{selected_district.split('(')[0].strip()}**")
-                if caption_items:
-                    st.caption(" | ".join(caption_items) + " (Telangana organic bio-solutions apply state-wide).")
-                
-                if not matches:
-                    # Fallback to direct records if ever empty (safety net)
-                    for rank, (_, row) in enumerate(crop_df.head(top_k).iterrows(), 1):
-                        sol = row.get("organic_solution", "")
-                        app = row.get("how_to_apply", "")
-                        cat = row.get("problem_category", "")
-                        recipes = engine.recipe_matcher.match_recipes(sol, app, max_recipes=2)
-                        practices = engine.get_related_agronomic_practices(chosen_crop, cat, max_practices=1)
-                        fb_match = {
-                            "id": row.get("id", ""),
-                            "crop": chosen_crop,
-                            "crop_telugu": crop_telugu,
-                            "season": row.get("season", season_info),
-                            "problem_name": row.get("problem_name", ""),
-                            "causal_agent": row.get("causal_agent", ""),
-                            "problem_category": cat,
-                            "symptoms": row.get("symptoms", ""),
-                            "organic_solution": sol,
-                            "how_to_apply": app,
-                            "preventive_practice": row.get("preventive_practice", ""),
-                            "when_to_seek_help": row.get("when_to_seek_help", ""),
-                            "major_districts": row.get("major_districts_telangana", districts_sample),
-                            "similarity_score": 0.85,
-                            "confidence_percentage": 85.0,
-                            "related_recipes": recipes,
-                            "related_agronomic_practices": practices
-                        }
-                        render_advisory_card(rank, fb_match, expanded=(rank == 1))
-                else:
-                    for rank, match in enumerate(matches, 1):
-                        render_advisory_card(rank, match, expanded=(rank == 1))
-
-            # Dedicated Agronomic Practices Section for this specific crop (ALWAYS shown)
-            crop_practices = engine.get_crop_agronomic_practices(chosen_crop, max_practices=4)
-            if crop_practices:
-                st.markdown("<hr style='margin: 25px 0 15px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
-                render_agronomic_practices_section(chosen_crop, crop_practices)
-
-        # =========================================================
-        # CASE B: ALL CROPS MODE (GLOBAL SEARCH)
-        # =========================================================
+        # Context Indicator Bar
+        filter_badges = []
+        if crop_filter_val:
+            tel_str = f" ({crop_telugu})" if crop_telugu else ""
+            filter_badges.append(f"🌱 Crop: **{crop_filter_val}{tel_str}**")
         else:
-            st.markdown("### 💬 Describe Your Crop Problem / లక్షణాలు నమోదు చేయండి")
-            st.markdown("Type what you observe in your field (in English or Telugu), or click a quick sample query below:")
+            filter_badges.append("🌱 Crop: **All Crops (అన్ని పంటలు)**")
+        
+        if canon_district != "All Districts":
+            filter_badges.append(f"📍 District: **{selected_district.split('(')[0].strip()}**")
+        else:
+            filter_badges.append("📍 District: **All Districts (తెలంగాణ అంతటా)**")
+            
+        if canon_season != "All Seasons":
+            filter_badges.append(f"🗓️ Season: **{selected_season.split('(')[0].strip()}**")
+        else:
+            filter_badges.append("🗓️ Season: **All Seasons (అన్ని కాలాలు)**")
 
-            sample_queries = [
-                "my paddy is drying in circles and small brown insects at the bottom of plants",
-                "cotton leaf curl with whitefly and yellowing veins",
-                "chilli plants stunted with leaf curl and thrips",
-                "tomato plants wilting suddenly during fruiting",
-                "groundnut leaves have circular dark brown tikka spots",
-                "వరి ఆకులు పసుపు రంగులోకి మారుతున్నాయి మరియు కాండం ఎండిపోతోంది"
+        st.markdown(
+            f"<div style='background:rgba(46,125,50,0.12);border-left:4px solid #2e7d32;padding:10px 18px;border-radius:8px;font-size:0.96rem;margin:10px 0 18px 0;color:#1b5e20;font-weight:600;display:flex;flex-wrap:wrap;gap:14px;align-items:center;'>"
+            + "<span>" + "</span> • <span>".join(filter_badges) + "</span>"
+            + "</div>",
+            unsafe_allow_html=True
+        )
+
+        st.markdown("### 💬 Describe Your Crop Problem / లక్షణాలు నమోదు చేయండి")
+        prompt_hint = f"in your {chosen_crop} field" if crop_filter_val else "in your field"
+        st.markdown(f"Type what you observe {prompt_hint} (in English or Telugu), or click a prevalent threat below:")
+
+        # Prevalent Threats & Quick Sample Buttons based on selected Crop & Season
+        if crop_filter_val:
+            active_crop_df = crop_df
+            if canon_season != "All Seasons":
+                s_low = canon_season.lower()
+                season_matching = active_crop_df[active_crop_df["season"].str.lower().str.contains(s_low, na=False) | active_crop_df["season"].str.lower().str.contains("all", na=False)]
+                if not season_matching.empty:
+                    active_crop_df = pd.concat([season_matching, active_crop_df[~active_crop_df.index.isin(season_matching.index)]])
+            
+            sample_chips = []
+            for _, r in active_crop_df.head(6).iterrows():
+                p_cat = r.get("problem_category", "")
+                cat_symbol = "🐛" if p_cat == "Pest" else ("🍂" if p_cat == "Disease" else "🧪")
+                p_name = r["problem_name"]
+                chip_lbl = f"{cat_symbol} {p_name[:20]}" if len(p_name) > 20 else f"{cat_symbol} {p_name}"
+                sample_chips.append((chip_lbl, r["farmer_query_example"]))
+        else:
+            sample_chips = [
+                ("🌾 Paddy BPH", "my paddy is drying in circles and small brown insects at the bottom of plants"),
+                ("☁️ Cotton Whitefly", "cotton leaf curl with whitefly and yellowing veins"),
+                ("🌶️ Chilli Curl", "chilli plants stunted with leaf curl and thrips"),
+                ("🍅 Tomato Wilt", "tomato plants wilting suddenly during fruiting"),
+                ("🥜 Groundnut Tikka", "groundnut leaves have circular dark brown tikka spots"),
+                ("🇮🇳 వరి (Telugu)", "వరి ఆకులు పసుపు రంగులోకి మారుతున్నాయి మరియు కాండం ఎండిపోతోంది")
             ]
 
-            if "farmer_query" not in st.session_state or not st.session_state["farmer_query"]:
-                st.session_state["farmer_query"] = sample_queries[0]
+        def _set_query(q_text: str):
+            st.session_state["farmer_query"] = q_text
 
-            def _set_sample_query(sample_text: str):
-                st.session_state["farmer_query"] = sample_text
-
-            btn_cols = st.columns(len(sample_queries))
-            for i, q in enumerate(sample_queries):
-                short_lbl = [
-                    "🌾 Paddy BPH",
-                    "☁️ Cotton Whitefly",
-                    "🌶️ Chilli Curl",
-                    "🍅 Tomato Wilt",
-                    "🥜 Groundnut Tikka",
-                    "🇮🇳 వరి (Telugu)"
-                ][i]
-                btn_cols[i].button(
-                    short_lbl,
-                    key=f"btn_sample_{i}",
-                    use_container_width=True,
-                    on_click=_set_sample_query,
-                    args=(q,)
-                )
-
-            farmer_query = st.text_area(
-                "Farmer Query (రైతు సమస్య):",
-                value=st.session_state.get("farmer_query", ""),
-                height=85,
-                placeholder="e.g. paddy leaves folded with white streaks, or central shoot drying..."
+        chip_cols = st.columns(len(sample_chips))
+        for i, (chip_lbl, chip_query) in enumerate(sample_chips):
+            chip_cols[i].button(
+                chip_lbl,
+                key=f"btn_chip_{i}_{chosen_crop}",
+                use_container_width=True,
+                on_click=_set_query,
+                args=(chip_query,)
             )
 
+        if "farmer_query" not in st.session_state or not st.session_state["farmer_query"]:
+            st.session_state["farmer_query"] = sample_chips[0][1]
+
+        farmer_query = st.text_area(
+            "Farmer Query (రైతు సమస్య):",
+            value=st.session_state.get("farmer_query", ""),
+            height=85,
+            placeholder="e.g. leaves turning yellow, circular drying patches, wilting, or insects seen..."
+        )
+
+        btn_c1, btn_c2 = st.columns([3, 1])
+        with btn_c1:
             search_btn = st.button("🚀 Get Organic Advisory (సలహా పొందండి)", type="primary", use_container_width=True)
+        with btn_c2:
+            st.button("Clear Query", use_container_width=True, on_click=_set_query, args=("",))
 
-            if farmer_query:
-                advisory = engine.get_advisory(
-                    farmer_query=farmer_query,
-                    top_k=top_k,
-                    crop_filter=None,
-                    district_filter=canon_district if canon_district != "All Districts" else None,
-                    season_filter=canon_season if canon_season != "All Seasons" else None
-                )
+        # Effective search query
+        active_query = farmer_query.strip()
+        if not active_query and crop_filter_val:
+            active_query = f"{crop_filter_val} major prevalent pests and diseases"
 
-                matches = advisory.get("matches", [])
-                st.markdown(f"#### 📋 Top {len(matches)} Organic Recommendations Across All Crops")
-                caption_items = []
-                if canon_season != "All Seasons":
-                    caption_items.append(f"🗓️ Season: **{selected_season.split('(')[0].strip()}**")
-                if canon_district != "All Districts":
-                    caption_items.append(f"📍 District: **{selected_district.split('(')[0].strip()}**")
-                if caption_items:
-                    st.caption(" | ".join(caption_items) + " (Showing proven recommendations across Telangana).")
+        if active_query:
+            advisory = engine.get_advisory(
+                farmer_query=active_query,
+                top_k=top_k,
+                crop_filter=crop_filter_val,
+                district_filter=canon_district if canon_district != "All Districts" else None,
+                season_filter=canon_season if canon_season != "All Seasons" else None
+            )
 
+            matches = advisory.get("matches", [])
+            header_scope = f"for {crop_filter_val}" if crop_filter_val else "Across All Crops"
+            st.markdown(f"#### 📋 Top {len(matches)} Organic Recommendations {header_scope}")
+            
+            caption_items = []
+            if crop_filter_val:
+                caption_items.append(f"🌱 Crop: **{crop_filter_val}**")
+            if canon_season != "All Seasons":
+                caption_items.append(f"🗓️ Season: **{selected_season.split('(')[0].strip()}**")
+            if canon_district != "All Districts":
+                caption_items.append(f"📍 District: **{selected_district.split('(')[0].strip()}**")
+            if caption_items:
+                st.caption(" | ".join(caption_items) + " (Showing proven recommendations across Telangana).")
+
+            if not matches and crop_filter_val:
+                # Direct fallback for this crop
+                for rank, (_, row) in enumerate(crop_df.head(top_k).iterrows(), 1):
+                    sol = row.get("organic_solution", "")
+                    app = row.get("how_to_apply", "")
+                    cat = row.get("problem_category", "")
+                    recipes = engine.recipe_matcher.match_recipes(sol, app, max_recipes=2)
+                    practices = engine.get_related_agronomic_practices(crop_filter_val, cat, max_practices=1)
+                    fb_match = {
+                        "id": row.get("id", ""),
+                        "crop": crop_filter_val,
+                        "crop_telugu": row.get("crop_telugu", ""),
+                        "season": row.get("season", "Kharif & Rabi"),
+                        "problem_name": row.get("problem_name", ""),
+                        "causal_agent": row.get("causal_agent", ""),
+                        "problem_category": cat,
+                        "symptoms": row.get("symptoms", ""),
+                        "organic_solution": sol,
+                        "how_to_apply": app,
+                        "preventive_practice": row.get("preventive_practice", ""),
+                        "when_to_seek_help": row.get("when_to_seek_help", ""),
+                        "major_districts": row.get("major_districts_telangana", "Telangana"),
+                        "similarity_score": 0.85,
+                        "confidence_percentage": 85.0,
+                        "related_recipes": recipes,
+                        "related_agronomic_practices": practices
+                    }
+                    render_advisory_card(rank, fb_match, expanded=(rank == 1))
+            else:
                 for rank, match in enumerate(matches, 1):
                     render_advisory_card(rank, match, expanded=(rank == 1))
 
-                # General Agronomic Practices for Telangana Farmers (ALWAYS shown)
-                gen_practices = engine.get_crop_agronomic_practices("All Crops", max_practices=4)
-                if gen_practices:
-                    st.markdown("<hr style='margin: 25px 0 15px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
-                    render_agronomic_practices_section("Telangana Sustainable Farms", gen_practices)
+            # Bottom Agronomic Practices Section (Matching Images 4 & 5!)
+            crop_for_practices = crop_filter_val if crop_filter_val else "All Crops"
+            practices_title = f"{crop_filter_val}" if crop_filter_val else "Telangana Sustainable Farms"
+            rec_practices = engine.get_crop_agronomic_practices(crop_for_practices, max_practices=4)
+            if not rec_practices:
+                rec_practices = engine.get_crop_agronomic_practices("All Crops", max_practices=4)
+            if rec_practices:
+                st.markdown("<hr style='margin: 25px 0 15px 0; border: none; border-top: 1px solid #e0e0e0;'>", unsafe_allow_html=True)
+                render_agronomic_practices_section(practices_title, rec_practices)
 
     # -------------------------------------------------------------
     # TAB 2: Organic Recipes Directory
