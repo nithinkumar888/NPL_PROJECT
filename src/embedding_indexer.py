@@ -20,21 +20,18 @@ from src.preprocessor import TextPreprocessor, preprocess_text
 from src.utils import load_telangana_dataset
 
 
-# Ensure HuggingFace loads from local cache without blocking on network queries
-os.environ.setdefault("HF_HUB_OFFLINE", "1")
-os.environ.setdefault("TRANSFORMERS_OFFLINE", "1")
-
+# Allow SentenceTransformers to fetch weights or use local cache
 MODEL_NAME = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 INDEX_DEFAULT_PATH = Path("data/faiss_index.bin")
 METADATA_DEFAULT_PATH = Path("data/index_metadata.pkl")
 
 
 def load_sentence_transformer(model_name: str = MODEL_NAME) -> SentenceTransformer:
-    """Load SentenceTransformer prioritizing cached local weights."""
+    """Load SentenceTransformer prioritizing cached local weights, falling back to download if needed."""
     try:
         return SentenceTransformer(model_name, local_files_only=True)
     except Exception:
-        # Fallback if local_files_only flag causes issues
+        # Fallback to downloading or fetching model
         return SentenceTransformer(model_name)
 
 

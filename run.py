@@ -17,3 +17,4 @@ if __name__ == "__main__":
         "true",
     ]
     sys.exit(stcli.main())
+
